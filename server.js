@@ -27,7 +27,13 @@ app.use(bodyParser());
 
 // Get a list of inflation values
 app.get('api/statistics', function(request, response){
-	
+	return InflationModel.find( function( err, data){
+		if (!err) {
+			return response.send(data);
+		} else {
+			return console.log(err);	
+		}
+	});		
 });
 
 
