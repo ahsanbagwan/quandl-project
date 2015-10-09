@@ -19,7 +19,7 @@ var Inflation = new mongoose.Schema({
 // Models
 var InflationModel = mongoose.model('Inflation', Inflation);
 
-var Book = new mongoose.model('Inflation')
+var Book = new mongoose.model('Inflation');
 
 // Where to serve static content
 app.use(express.static(path.join(application_root,'site')));
@@ -35,8 +35,6 @@ app.get('api/statistics', function(request, response){
 		}
 	});		
 });
-
-
 
 // Start server
 var port = 4711;
