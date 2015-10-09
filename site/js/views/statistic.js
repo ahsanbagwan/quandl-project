@@ -18,6 +18,6 @@ app.StatisticView = Backbone.View.extend({
 		var inflationView = new app.InflationView({
 			model: item
 		});
-		this.$el.append(bookView.render().el);
+		this.$el.append(inflationView.render().el);
 	}
 });
