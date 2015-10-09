@@ -1,10 +1,10 @@
 var app = app || {};
 
-app.Statistic = Backbone.View.extend({
+app.StatisticView = Backbone.View.extend({
 	el: '#books',
 
 	initialize: function(initialData){
-		this.collection = new app.Statistic();
+		this.collection = new app.Statistic(initialData);
 		this.render();
 	},
 
@@ -15,9 +15,9 @@ app.Statistic = Backbone.View.extend({
 	},
 
 	renderInflation: function(item) {
-		var statisticView = new app.InflationView({
+		var inflationView = new app.InflationView({
 			model: item
 		});
-		this.$el.append(statisticView.render().el);
+		this.$el.append(bookView.render().el);
 	}
 });
