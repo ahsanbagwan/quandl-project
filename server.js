@@ -8,7 +8,7 @@ var application_root = __dirname,
 
 // Create server
 var app = express();
-mongoose.connect('mongodb://localhost/library_database');
+/*mongoose.connect('mongodb://localhost/library_database');
 
 // Schema
 var Inflation = new mongoose.Schema({
@@ -21,12 +21,18 @@ var InflationModel = mongoose.model('Inflation', Inflation);
 
 var Book = new mongoose.model('Inflation');
 
+*/
+
 // Where to serve static content
 app.use(express.static(path.join(application_root,'site')));
 app.use(bodyParser());
 
+app.get('api', function(request, response){
+	response.send('Inflation API is running');
+});
+
 // Get a list of inflation values
-app.get('api/statistics', function(request, response){
+/*app.get('api/statistics', function(request, response){
 	return InflationModel.find( function( err, data){
 		if (!err) {
 			return response.send(data);
@@ -35,6 +41,7 @@ app.get('api/statistics', function(request, response){
 		}
 	});		
 });
+*/
 
 // Start server
 var port = 4711;
