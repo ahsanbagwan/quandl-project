@@ -40,12 +40,13 @@ app.configure(function(){
 
 });
 
-app.get('api', function(request, response){
+// Test API endpoint
+app.get('/api', function(request, response){
 	response.send('Inflation API is running');
 });
 
 // Get a list of inflation values
-/*app.get('api/statistics', function(request, response){
+app.get('api/statistics', function(request, response){
 	return InflationModel.find( function( err, data){
 		if (!err) {
 			return response.send(data);
@@ -54,7 +55,7 @@ app.get('api', function(request, response){
 		}
 	});		
 });
-*/
+
 
 // Start server
 var port = 4711;
