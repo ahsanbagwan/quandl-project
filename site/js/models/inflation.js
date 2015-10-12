@@ -1,6 +1,8 @@
 var app = app || {};
 
 app.Inflation = Backbone.Model.extend({
-	inflationDate: 'Unknown',
-	value: 'Unknown'
+	defaults: { inflationDate: 'Unknown',
+				value: 'Unknown'
+	},
+	idAttribute: '_id'			
 });
