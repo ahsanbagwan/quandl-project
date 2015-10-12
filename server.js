@@ -8,7 +8,7 @@ var application_root = __dirname,
 
 // Create server
 var app = express();
-/*mongoose.connect('mongodb://localhost/library_database');
+mongoose.connect('mongodb://localhost/inflation_database');
 
 // Schema
 var Inflation = new mongoose.Schema({
