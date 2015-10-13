@@ -11,6 +11,7 @@ app.StatisticView = Backbone.View.extend({
 
 	render: function() {
 		this.collection.each(function(item){
+			console.log("item: " + item );
 			this.renderInflation(item);
 		}, this);
 	},
