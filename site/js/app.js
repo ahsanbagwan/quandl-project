@@ -1,11 +1,13 @@
 var app = app || {};
 
 $(function() {
-	var data = [
-		{inflationDate: '2015-05-31', value: '5.7377049180328'}
-		
-	];
-	new app.StatisticView(data);
+	console.log("in app.js");
+	new app.StatisticView();
 });
 
 // ["2015-05-31",5.7377049180328],["2015-04-30",5.7851239669421],["2015-03-31",6.2761506276151],["2015-02-28",6.3025210084034],["2015-01-31",7.1729957805907]
+/*var data = [
+		{inflationDate: '2015-05-31', value: '5.7377049180328'}
+		
+	];
+*/

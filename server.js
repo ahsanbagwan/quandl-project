@@ -1,3 +1,4 @@
+'use strict';
 // Module dependencies
 
 var application_root = __dirname,
@@ -19,7 +20,7 @@ var Inflation = new mongoose.Schema({
 });
 
 // Models
-var InflationModel = mongoose.model('Inflation', Inflation);
+var Inflation = mongoose.model('Inflation', Inflation);
 
 // Configure server
 app.configure(function(){
@@ -47,7 +48,8 @@ app.get('/api', function(request, response){
 
 // Get a list of inflation values
 app.get('/api/statistics', function(request, response){
-	return InflationModel.find( function( err, data){
+	console.log("in api call on server");
+	return Inflation.find( function( err, data){
 		if (!err) {
 			return response.send(data);
 		} else {

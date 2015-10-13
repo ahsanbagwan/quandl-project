@@ -3,7 +3,8 @@ var app = app || {};
 app.StatisticView = Backbone.View.extend({
 	el: '#books',
 
-	initialize: function(){
+	initialize: function() {
+		console.log("in list view initialize");
 		this.collection = new app.Statistic();
 		this.collection.fetch();
 		this.render();
