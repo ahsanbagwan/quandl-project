@@ -11,7 +11,7 @@ var application_root = __dirname,
 var app = express();
 
 //Connect to database
-mongoose.connect('mongodb://localhost/inflation_database');
+mongoose.connect('mongodb://127.0.0.1/inflation_database');
 
 // Schemas
 var Inflation = new mongoose.Schema({
@@ -20,7 +20,7 @@ var Inflation = new mongoose.Schema({
 });
 
 // Models
-var Inflation = mongoose.model('Inflation', Inflation);
+var InflationModel = mongoose.model('Inflation', Inflation);
 
 // Configure server
 app.configure(function(){
@@ -49,8 +49,9 @@ app.get('/api', function(request, response){
 // Get a list of inflation values
 app.get('/api/statistics', function(request, response){
 	console.log("in api call on server");
-	return Inflation.find( function( err, data){
+	return InflationModel.find( function( err, data){
 		if (!err) {
+			console.log("data " + data);
 			return response.send(data);
 		} else {
 			return console.log(err);	
